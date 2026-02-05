@@ -13,28 +13,31 @@ const featuredAnime = [
     id: 1,
     title: "هجوم العمالقة",
     titleEn: "Attack on Titan",
-    image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1200&h=600&fit=crop",
+    image: "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
     episode: "الحلقة 87",
     type: "مترجم",
     rating: 9.8,
+    gradient: "from-red-900 via-gray-900 to-black",
   },
   {
     id: 2,
     title: "جوجوتسو كايسن",
     titleEn: "Jujutsu Kaisen",
-    image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=1200&h=600&fit=crop",
+    image: "https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
     episode: "الحلقة 47",
     type: "مترجم",
     rating: 9.5,
+    gradient: "from-purple-900 via-blue-900 to-black",
   },
   {
     id: 3,
-    title: "ديث نوت",
-    titleEn: "Death Note",
-    image: "https://images.unsplash.com/photo-1560972550-aba3456b5564?w=1200&h=600&fit=crop",
-    episode: "الحلقة 37",
+    title: "ديمون سلاير",
+    titleEn: "Demon Slayer",
+    image: "https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
+    episode: "الحلقة 44",
     type: "مترجم",
     rating: 9.7,
+    gradient: "from-teal-900 via-green-900 to-black",
   },
 ];
 
@@ -43,26 +46,26 @@ const latestEpisodes = [
     id: 1,
     title: "ون بيس",
     titleEn: "One Piece",
-    image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&h=600&fit=crop",
+    image: "https://cdn.myanimelist.net/images/anime/6/73245.jpg",
     episode: "الحلقة 1102",
     type: "مترجم",
     time: "منذ ساعة",
   },
   {
     id: 2,
-    title: "بلاك كلوفر",
-    titleEn: "Black Clover",
-    image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=400&h=600&fit=crop",
-    episode: "الحلقة 170",
+    title: "جوجوتسو كايسن",
+    titleEn: "Jujutsu Kaisen",
+    image: "https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
+    episode: "الحلقة 47",
     type: "مترجم",
     time: "منذ ساعتين",
   },
   {
     id: 3,
-    title: "تشينسو مان",
-    titleEn: "Chainsaw Man",
-    image: "https://images.unsplash.com/photo-1560972550-aba3456b5564?w=400&h=600&fit=crop",
-    episode: "الحلقة 24",
+    title: "ديمون سلاير",
+    titleEn: "Demon Slayer",
+    image: "https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
+    episode: "الحلقة 44",
     type: "مترجم",
     time: "منذ 3 ساعات",
   },
@@ -70,26 +73,26 @@ const latestEpisodes = [
     id: 4,
     title: "ناروتو شيبودن",
     titleEn: "Naruto Shippuden",
-    image: "https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?w=400&h=600&fit=crop",
+    image: "https://cdn.myanimelist.net/images/anime/5/17407.jpg",
     episode: "الحلقة 500",
     type: "مترجم",
     time: "منذ 5 ساعات",
   },
   {
     id: 5,
-    title: "دراغون بول",
-    titleEn: "Dragon Ball Z",
-    image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=400&h=600&fit=crop",
-    episode: "الحلقة 291",
+    title: "هجوم العمالقة",
+    titleEn: "Attack on Titan",
+    image: "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+    episode: "الحلقة 87",
     type: "مترجم",
     time: "منذ 6 ساعات",
   },
   {
     id: 6,
-    title: "هنتر اكس هنتر",
-    titleEn: "Hunter x Hunter",
-    image: "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=400&h=600&fit=crop",
-    episode: "الحلقة 148",
+    title: "دراغون بول",
+    titleEn: "Dragon Ball Z",
+    image: "https://cdn.myanimelist.net/images/anime/1607/117271.jpg",
+    episode: "الحلقة 291",
     type: "مترجم",
     time: "منذ 8 ساعات",
   },
@@ -139,7 +142,7 @@ export default function Home() {
               <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center glow-red">
                 <span className="text-white font-bold text-xl">أ</span>
               </div>
-              <h1 className="text-xl font-bold text-gradient">أنمي عربي</h1>
+              <h1 className="text-xl font-bold text-gradient">ryx</h1>
             </div>
 
             {/* Desktop Navigation */}
@@ -210,14 +213,15 @@ export default function Home() {
             {featuredAnime.map((anime, index) => (
               <div
                 key={anime.id}
-                className={`absolute inset-0 transition-opacity duration-500 ${
+                className={`absolute inset-0 transition-opacity duration-500 bg-gradient-to-br ${anime.gradient || 'from-red-900 via-gray-900 to-black'} ${
                   index === currentSlide ? "opacity-100" : "opacity-0"
                 }`}
               >
                 <img
                   src={anime.image}
                   alt={anime.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover opacity-60"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 <div className="absolute bottom-0 right-0 p-8 md:p-12">
@@ -278,11 +282,12 @@ export default function Home() {
                     key={anime.id}
                     className="anime-card bg-transparent border-0 cursor-pointer group"
                   >
-                    <div className="relative aspect-[3/4] overflow-hidden rounded-xl">
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-gradient-to-br from-red-900/50 via-gray-900 to-black">
                       <img
                         src={anime.image}
                         alt={anime.title}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
